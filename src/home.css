@@ -1,0 +1,61 @@
+/* Container styling */
+.home-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Left text */
+.home-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.home-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Button */
+.share-btn {
+  padding: 10px 20px;
+  margin-top: 1rem;
+  background-color: #00cba9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Image */
+.home-image {
+  flex: 1;
+  text-align: right;
+  min-width: 250px;
+}
+
+.home-image img {
+  max-width: 60%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* SVG Wave */
+.wave-svg {
+  overflow: hidden;
+  width: 100%;
+}
+
+.wave-svg svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
