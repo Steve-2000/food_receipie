@@ -7,13 +7,14 @@ const cors = require('cors');
 
 app.use(express.json());
 app.use(cors()); // Allows all origins (good for development)
-
+app.use(express.static('public')); // Serve static files from the 'public' directory
 
 //server
 const dotenv=require('dotenv').config()
 connectdb();
 app.use('/',require('./routers/userRouter'))
 app.use('/receipe',require('./routers/receipe'));
+app.use('/favorites',require('./routers/favourites'));
 
 
 

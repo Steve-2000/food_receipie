@@ -10,7 +10,7 @@ const receipemode= mongoose.Schema({
         required:true
     },  
     ingredients:{
-        type:[String],
+        type:Array,
         required:true
     },
     instructions:{
@@ -21,6 +21,15 @@ const receipemode= mongoose.Schema({
         type:String,
         
     },
+   time:{
+        type:String
+    },
+      createdBy:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'user',
+        
+
+    }
 
  
 },{timestramps:true});

@@ -22,7 +22,7 @@ const hpw=await bcrypt.hash(password,10)
 const newuser= await usermodel.create({email,password:hpw})
  console.log("user scess")
 let token=jwt.sign({email,id:newuser.id},process.env.securekey)
-return res.status(200).json({token,newuser})
+return res.status(200).json({token,user:newuser})
 
 }
 
