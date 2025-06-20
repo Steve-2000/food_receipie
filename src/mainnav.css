@@ -1,0 +1,64 @@
+/* Mainnav.css */
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #00cba9 0%, #00b39f 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Header h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.Header ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.Header ul li {
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.Header ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.Header ul li:hover {
+  color: #ffe600;
+  transform: scale(1.1);
+}
+
+.Header ul li a:hover {
+  color: #ffe600;
+}
+
+@media (max-width: 768px) {
+  .Header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .Header ul {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .Header ul li {
+    width: 100%;
+  }
+}

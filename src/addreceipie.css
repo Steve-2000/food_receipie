@@ -1,0 +1,64 @@
+/* Main form container */
+.add-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.7s ease forwards;
+  opacity: 0;
+}
+
+/* Each input block */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #4dabf7;
+  box-shadow: 0 0 6px rgba(77, 171, 247, 0.2);
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: #4dabf7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background: #339af0;
+  transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

@@ -1,29 +1,57 @@
+import { useState,useEffect } from 'react'
 import Model from './Model'
-import React from 'react'
+import Loginform from './loginform';
+// import React from 'react'
+import { Link } from 'react-router-dom'
+// import { Signup } from '../../backend/controller/user';
+import './mainnav.css'
 
 const Mainnav= () => {
-  const[isOpen,SetIsOpen]=(false)
-  function logbutton(){
-    SetIsOpen(true)
+  let token = localStorage.getItem("token");
 
-  }
-  
+
+  const [isOpen, SetIsOpen] = useState(false);
+  const [isLogin, SetIsLogin] = useState(token?false:true);
+
+  useEffect(()=>{
+    SetIsLogin(token?false:true);
+
+  },[token])
+
+  const logbutton = () => {
+    if(token){
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      SetIsLogin(true);
+    }else{
+      SetIsOpen(true);
+    }
+
+   
+    
+
+  };
 
   return (
     <div>
-        <header className='
-        Header' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem', backgroundColor: '#00cba9', color: '#fff' }}>
-            <h2>food blog</h2>
-            <ul style={{display:'flex', listStyle:'none', justifyContent: 'space-around' ,gap:'1rem', alignItems: 'center'}}>
-                <li>home</li>   
-                <li>My Receipies</li>
-                <li>favourits</li>
-                <li onClick={logbutton}>login</li>
-            </ul>
-    
-        </header>
-        {isOpen && <Model />}    </div>
+      <header className="Header">
+  <h2>food blog</h2>
+  <ul>
+    <li><Link to="/">home</Link></li>
+    <li onClick={() => isLogin && SetIsOpen(true)}>
+      <Link to={!isLogin ? "/receipies" : "/"}>receipies</Link>
+    </li>
+    <li onClick={() => isLogin && SetIsOpen(true)}>
+      <Link to={!isLogin ? "/favourites" : "/"}>favourites</Link>
+    </li>
+    <li onClick={logbutton}>{isLogin ? "signin" : "logout"}</li>
+  </ul>
+</header>
+
+        {(isOpen)&& <Model onclose={()=>SetIsOpen(false)}><Loginform SetIsOpen={()=>SetIsOpen(false)}/></Model>  }
+          </div>
   )
 }
+
 
 export default Mainnav

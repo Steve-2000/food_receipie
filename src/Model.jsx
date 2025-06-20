@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
+import './model.css';
 
-const Model = () => {
+const Model = ({ children, onclose }) => {
   return (
-    <div>
-        <dialog>
-            hi
-        </dialog>
+    <div className="dialog-backdrop" onClick={onclose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Model
+export default Model;
